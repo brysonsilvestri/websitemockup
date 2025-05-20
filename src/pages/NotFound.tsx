@@ -1,5 +1,8 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+
+import React, { useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import Layout from "@/components/layout/Layout";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,15 +15,27 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <Layout>
+      <div className="container flex flex-col items-center justify-center min-h-[70vh] py-16 text-center">
+        <div className="mb-8">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-chembrand-100 text-chembrand-700 mb-4">
+            <span className="text-2xl font-bold">404</span>
+          </div>
+        </div>
+        <h1 className="text-4xl font-bold mb-4">Page Not Found</h1>
+        <p className="text-xl text-muted-foreground max-w-lg mb-8">
+          We couldn't find the page you were looking for. It might have been removed, renamed, or doesn't exist.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Link to="/">
+            <Button>Back to Home</Button>
+          </Link>
+          <Link to="/products">
+            <Button variant="outline">Browse Products</Button>
+          </Link>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
