@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -21,13 +21,49 @@ const Quote = () => {
   const preselectedProduct = searchParams.get('product');
   const { toast } = useToast();
 
+  // Form state
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    company: '',
+    product: preselectedProduct || '',
+    quantity: '',
+    frequency: 'one-time',
+    specifications: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const handleSelectChange = (name: string, value: string) => {
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // In a real app, you'd send this data to your backend
+    console.log('Quote request submitted:', formData);
     
     toast({
       title: "Quote request submitted",
       description: "We'll get back to you within 1-2 business days.",
+    });
+
+    // Reset form (optional)
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      company: '',
+      product: '',
+      quantity: '',
+      frequency: 'one-time',
+      specifications: ''
     });
   };
 
@@ -58,27 +94,54 @@ const Quote = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name *</Label>
-                      <Input id="firstName" required />
+                      <Input 
+                        id="firstName" 
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        required 
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Last Name *</Label>
-                      <Input id="lastName" required />
+                      <Input 
+                        id="lastName" 
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        required 
+                      />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="email">Email Address *</Label>
-                    <Input id="email" type="email" required />
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      value={formData.email}
+                      onChange={handleChange}
+                      required 
+                    />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number *</Label>
-                    <Input id="phone" type="tel" required />
+                    <Input 
+                      id="phone" 
+                      type="tel" 
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required 
+                    />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="company">Company/Organization *</Label>
-                    <Input id="company" required />
+                    <Input 
+                      id="company" 
+                      value={formData.company}
+                      onChange={handleChange}
+                      required 
+                    />
                   </div>
                 </CardContent>
               </Card>
@@ -93,7 +156,10 @@ const Quote = () => {
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="product">Product *</Label>
-                    <Select defaultValue={preselectedProduct || ""}>
+                    <Select 
+                      value={formData.product} 
+                      onValueChange={(value) => handleSelectChange('product', value)}
+                    >
                       <SelectTrigger>
                         <SelectValue placeholder="Select a product" />
                       </SelectTrigger>
@@ -114,12 +180,21 @@ const Quote = () => {
                   
                   <div className="space-y-2">
                     <Label htmlFor="quantity">Quantity Needed *</Label>
-                    <Input id="quantity" type="text" required />
+                    <Input 
+                      id="quantity" 
+                      type="text"
+                      value={formData.quantity}
+                      onChange={handleChange}
+                      required 
+                    />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="frequency">Purchase Frequency</Label>
-                    <Select defaultValue="one-time">
+                    <Select 
+                      value={formData.frequency} 
+                      onValueChange={(value) => handleSelectChange('frequency', value)}
+                    >
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
@@ -136,6 +211,8 @@ const Quote = () => {
                     <Label htmlFor="specifications">Additional Specifications</Label>
                     <Textarea 
                       id="specifications"
+                      value={formData.specifications}
+                      onChange={handleChange}
                       placeholder="Please provide any specific requirements, grade needed, or questions about the product."
                       rows={4}
                     />
