@@ -7,6 +7,10 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
+import vialsImage from '@/assets/vials-glass.jpg';
+import blueSolutionImage from '@/assets/blue-solution.jpg';
+import silverCrystalsImage from '@/assets/silver-crystals.jpg';
+import acetoneImage from '@/assets/acetone.jpg';
 
 const products = [
   {
@@ -16,7 +20,7 @@ const products = [
     category: 'Inorganic',
     purity: '99.9%',
     packaging: '500g vial',
-    image: '/placeholder.svg'
+    image: vialsImage
   },
   {
     id: 2,
@@ -25,7 +29,7 @@ const products = [
     category: 'Organic',
     concentration: '1% w/v',
     packaging: '100ml bottle',
-    image: '/placeholder.svg'
+    image: blueSolutionImage
   },
   {
     id: 3,
@@ -34,7 +38,7 @@ const products = [
     category: 'Inorganic',
     purity: '99.8%',
     packaging: '25g vial',
-    image: '/placeholder.svg'
+    image: silverCrystalsImage
   },
   {
     id: 4,
@@ -43,7 +47,7 @@ const products = [
     category: 'Organic',
     purity: '≥99.9%',
     packaging: '1L bottle',
-    image: '/placeholder.svg'
+    image: acetoneImage
   },
   {
     id: 5,
