@@ -5,11 +5,6 @@ import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import vialsImage from '@/assets/vials-glass.jpg';
-import blueSolutionImage from '@/assets/blue-solution.jpg';
-import silverCrystalsImage from '@/assets/silver-crystals.jpg';
-import acetoneImage from '@/assets/acetone.jpg';
 
 // This would normally come from an API
 const products = [
@@ -32,7 +27,7 @@ const products = [
       'Food science studies',
       'Chemical standards and reference materials'
     ],
-    image: vialsImage,
+    image: '/placeholder.svg',
     relatedProducts: ['2', '3', '5']
   },
   {
@@ -54,7 +49,7 @@ const products = [
       'Medical diagnostics',
       'Fish tank treatments'
     ],
-    image: blueSolutionImage,
+    image: '/placeholder.svg',
     relatedProducts: ['1', '5', '7']
   },
 ];
