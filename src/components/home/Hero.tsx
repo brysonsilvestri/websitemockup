@@ -41,14 +41,7 @@ const Hero = () => {
             <div className="absolute top-20 left-20 w-72 h-72 rounded-full bg-gradient-to-tl from-chembrand-200/30 to-transparent animate-fade-in" style={{
             animationDelay: '0.4s'
           }} />
-            <div className="absolute bottom-0 right-0 w-96 h-96 rounded-xl border border-chembrand-100 bg-gradient-to-br from-white to-chembrand-50/50 shadow-lg animate-fade-in" style={{
-            animationDelay: '0.6s'
-          }}>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-32 rounded-full bg-chembrand-100" />
-              <div className="absolute top-1/4 left-1/4 w-8 h-8 rounded-full bg-chembrand-300" />
-              <div className="absolute bottom-1/4 right-1/4 w-12 h-12 rounded-full bg-chembrand-200" />
-              <div className="absolute top-1/3 right-1/4 w-10 h-10 rounded-full bg-chembrand-400/50" />
-            </div>
+            
           </div>
         </div>
       </div>
