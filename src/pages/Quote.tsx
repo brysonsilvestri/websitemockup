@@ -28,7 +28,7 @@ const Quote = () => {
     email: '',
     phone: '',
     company: '',
-    product: preselectedProduct || 'default', // Changed from empty string to 'default'
+    product: preselectedProduct || '',
     quantity: '',
     frequency: 'one-time',
     specifications: ''
@@ -60,7 +60,7 @@ const Quote = () => {
       email: '',
       phone: '',
       company: '',
-      product: 'default', // Changed from empty string to 'default'
+      product: '',
       quantity: '',
       frequency: 'one-time',
       specifications: ''
@@ -164,7 +164,7 @@ const Quote = () => {
                         <SelectValue placeholder="Select a product" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="default">-- Select a product --</SelectItem>
+                        <SelectItem value="">-- Select a product --</SelectItem>
                         <SelectItem value="1">Sodium Chloride (99.9%)</SelectItem>
                         <SelectItem value="2">Methylene Blue Solution</SelectItem>
                         <SelectItem value="3">Silver Nitrate Crystals</SelectItem>
