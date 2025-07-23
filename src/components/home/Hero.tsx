@@ -18,7 +18,7 @@ const Hero = () => {
               <span className="text-gray-900">For Science, Medicine & Industry</span>
             </h1>
             
-            <p className="mt-6 text-lg text-gray-600"></p>
+            <p className="mt-6 text-lg text-gray-600">I</p>
             
             <div className="mt-8 flex flex-wrap gap-4">
               <Link to="/products">
