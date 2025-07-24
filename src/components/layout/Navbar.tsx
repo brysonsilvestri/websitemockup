@@ -10,12 +10,12 @@ const Navbar = () => {
     <div className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-sm">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6">
-          <Link to="/" className="flex items-center gap-2 font-bold text-xl text-chembrand-800">
-            <div className="rounded-md bg-gradient-to-r from-chembrand-600 to-chembrand-500 p-1.5 text-white">
-              <span className="sr-only">ChemSolutions</span>
-              <div className="h-5 w-5 rounded-sm bg-white/20" />
-            </div>
-            ChemSolutions
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/lovable-uploads/1e73b7ec-ceb9-439e-a4da-6bb8cd4520b1.png" 
+              alt="Isoflex Logo" 
+              className="h-8 w-auto"
+            />
           </Link>
           
           <nav className="hidden md:flex gap-5">
