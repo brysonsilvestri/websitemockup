@@ -27,7 +27,7 @@ const Hero = () => {
                 </Button>
               </Link>
               <Link to="/quote">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="text-slate-800">
                   Request a Quote
                 </Button>
               </Link>

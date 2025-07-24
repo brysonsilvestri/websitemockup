@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-
 const QuoteCTA = () => {
-  return (
-    <section className="py-20 relative overflow-hidden">
+  return <section className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 blue-gradient" />
       <div className="absolute inset-0 bg-[radial-gradient(40%_40%_at_55%_40%,rgba(255,255,255,0.3),rgba(255,255,255,0))]" />
       
@@ -25,15 +22,13 @@ const QuoteCTA = () => {
               </Button>
             </Link>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="border-white hover:bg-white/10 text-slate-50">
                 Contact Our Team
               </Button>
             </Link>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default QuoteCTA;
