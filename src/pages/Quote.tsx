@@ -164,7 +164,6 @@ const Quote = () => {
                         <SelectValue placeholder="Select a product" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">-- Select a product --</SelectItem>
                         <SelectItem value="1">Sodium Chloride (99.9%)</SelectItem>
                         <SelectItem value="2">Methylene Blue Solution</SelectItem>
                         <SelectItem value="3">Silver Nitrate Crystals</SelectItem>
