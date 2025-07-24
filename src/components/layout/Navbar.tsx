@@ -14,7 +14,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/1e73b7ec-ceb9-439e-a4da-6bb8cd4520b1.png" 
               alt="Isoflex Logo" 
-              className="h-12 w-auto"
+              className="h-8 w-auto"
             />
           </Link>
           
